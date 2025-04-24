@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
+import $ from 'jquery';
 
-		<title>Wyatt Shinkle</title>
-		<link rel="stylesheet" href="css/root.css">
-		<link rel="icon" href="assets/favicon.ico">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
-	</head>
-	
-	<body>
-		<header class="title-section">
-		<h1>Wyatt Shinkle</h1>
-		<h3>Software Engineer</h3>
-		</header>
-
-		<div class="commandline-container">
-		<div class="command-area">
-		</div>
-		</div>
-		<script>
 	const prompt = "user@mothership$";
 	const commands = [
 		{ command: "./boot", result: ["> Initializing Knowledge Registers... Complete!", "> Loading Motivation Cache... Complete!", "> Priming Creativity... Primed!", "> Querying Leadership Roles... Found!", "> Referencing Experience Pointer... Referenced!", "> Complete! Ready To Problem Solve" ] },
@@ -66,10 +47,4 @@
 	}	
 
 		runCommands(); // kick things off
-	</script>
-	</body>
-
-</html>
-
-
-
+	
