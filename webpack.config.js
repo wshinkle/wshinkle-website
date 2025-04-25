@@ -21,6 +21,7 @@ module.exports = (env, argv) => {
     if (argv.mode === 'development') {
         config.devtool = 'inline-source-map'
         config.watch = true
+        console.log('Running in development mode')
     }
 
     return config
