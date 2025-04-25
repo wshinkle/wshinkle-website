@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-module.exports = {
-    watch: true,
+
+var config = {
     entry: {
         home: { import: './src/home.js', filename: './[name].js' },
     },
@@ -15,4 +15,13 @@ module.exports = {
             chunks: ['home'],
         }),
     ],
+}
+
+module.exports = (env, argv) => {
+    if (argv.mode === 'development') {
+        config.devtool = 'inline-source-map'
+        config.watch = true
+    }
+
+    return config
 }
