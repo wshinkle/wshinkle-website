@@ -132,6 +132,13 @@ hr.solid {
 	color: var(--primary);
 }
 
+.hanging-cursor {
+
+	opacity: 0;
+	animation: blink .3s infinite alternate;
+	line-height: 1;
+}
+
 @keyframes fadein {
 	from {
 		height: 0px;
@@ -170,3 +177,12 @@ hr.solid {
 	}
 }
 
+
+@keyframes blink {
+	from {
+		opacity: 1;
+	  }
+	to {
+		opacity: 0;
+	}
+}

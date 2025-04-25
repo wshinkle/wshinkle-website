@@ -3,8 +3,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var config = {
     entry: {
-        home: { import: './src/home.js', filename: './[name].js' },
+        home: { import: './src/home.ts', filename: './[name].js' },
     },
+    module: {
+        rules: [
+          {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+          },
+        ],
+      },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [{ from: './assets', to: './assets' }],
