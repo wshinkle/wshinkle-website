@@ -1,31 +1,6 @@
 import $ from 'jquery'
 
-//event listeners
-
-// $('#about').on('click', function () {
-//     $(this).toggleClass('active')
-//     toggleSections('about')
-// })
-
-// $('#skills').on('click', function () {
-//     $(this).toggleClass('active')
-//     toggleSections('skills')
-// })
-
-// $('#projects').on('click', function () {
-//     $(this).toggleClass('active')
-//     toggleSections('projects')
-// })
-
-// $('#contact').on('click', function () {
-//     $(this).toggleClass('active')
-//     toggleSections('contact')
-// })
-
-// $('#3d').on('click', function () {
-//     $(this).toggleClass('active')
-//     toggleSections('3d')
-// })
+//section event listeners
 const sections = ['about', 'skills', 'projects', 'contact', '3d']
 sections.forEach((s) => {
     $(`#${s}`).on('click', function () {
@@ -48,11 +23,11 @@ const commands = [
         command: './boot',
         result: [
             '> Initializing Knowledge Registers... Complete!',
-            // '> Loading Motivation Cache... Complete!',
-            // '> Priming Creativity... Primed!',
-            // '> Querying Leadership Roles... Found!',
-            // '> Referencing Experience Pointers... Referenced!',
-            // '> Complete! Ready To Problem Solve!',
+            '> Loading Motivation Cache... Complete!',
+            '> Priming Creativity... Primed!',
+            '> Querying Leadership Roles... Found!',
+            '> Referencing Experience Pointers... Referenced!',
+            '> Complete! Ready To Problem Solve!',
         ],
     },
     {
@@ -60,16 +35,16 @@ const commands = [
         command: './initialize-developer',
         result: [
             ' _____                          _____ ',
-            // '( ___ )     version 2.9.13     ( ___ )',
-            // ' |   |~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ',
-            // ' |   |  _       __ __  __ _____ |   | ',
-            // ' |   | | |     / // / / // ___/ |   | ',
-            // ' |   | | | /| / // /_/ / \\__ \\  |   | ',
-            // ' |   | | |/ |/ // __  / ___/ /  |   | ',
-            // ' |   | |__/|__//_/ /_/ /____/   |   | ',
-            // ' |   |                          |   | ',
-            // ' |___|~~~~~~~~~~~~~~~~~~~~~~~~~~|___| ',
-            // '(_____)    wyattshinkle.com    (_____)',
+            '( ___ )     version 2.9.13     ( ___ )',
+            ' |   |~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ',
+            ' |   |  _       __ __  __ _____ |   | ',
+            ' |   | | |     / // / / // ___/ |   | ',
+            ' |   | | | /| / // /_/ / \\__ \\  |   | ',
+            ' |   | | |/ |/ // __  / ___/ /  |   | ',
+            ' |   | |__/|__//_/ /_/ /____/   |   | ',
+            ' |   |                          |   | ',
+            ' |___|~~~~~~~~~~~~~~~~~~~~~~~~~~|___| ',
+            '(_____)    wyattshinkle.com    (_____)',
         ],
     },
 ]
