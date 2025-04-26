@@ -59,7 +59,9 @@ h3 {
 	color: var(--background);
 }
 
-
+.command-area-grow {
+	animation: main-content-grow 1s ease-out forwards;
+}
 
 .command-section {
 	padding: 15px;
@@ -78,18 +80,12 @@ h3 {
 	margin: 0px
 }
 
-.command-area-post {
-	animation: slidedown 1s ease-out forwards;
-}
-
-
 .hidden {
 	display: none !important; 
 }
 
 .navbar {
 	width: 1200px;
-	
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -122,6 +118,7 @@ h3 {
 
 hr.solid {
 	width: 800px;
+	max-width: 80vw;
 	border-top: 2px solid var(--secondary);
 	border-radius: 10px;
 	z-index: 1;
@@ -139,6 +136,10 @@ hr.solid {
 	line-height: 1;
 }
 
+
+/* Animations */
+
+/* navbar fade in */
 @keyframes fadein {
 	from {
 		height: 0px;
@@ -153,31 +154,22 @@ hr.solid {
 	}
 }
 
-@keyframes fadeout {
+@keyframes main-content-grow {
 	from {
-		height: 40px;
-		opacity: 1;
-		border-bottom-color: var(--secondary);
-	  }
-	
-	to {
-		height: 0px;
-		opacity: 0;
-		border-bottom-color: transparent;
-	}
-}
 
-@keyframes slidedown {
-	from {
-		transform: translateY(0px);
-	  }
+	}
 	
 	to {
-	transform: translateY(10px);
+		height: 90vh;
+		width: 90vw;
+		font-size: larger;
 	}
 }
 
 
+
+
+/* cursor blink */
 @keyframes blink {
 	from {
 		opacity: 1;
