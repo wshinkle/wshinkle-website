@@ -7,13 +7,16 @@ var config = {
     },
     module: {
         rules: [
-          {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-          },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ],
-      },
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js'], // Add .ts and .tsx here
+    },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [{ from: './assets', to: './assets' }],
