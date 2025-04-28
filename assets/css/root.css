@@ -53,9 +53,7 @@ h3 {
 
 .command-area {
 	width: 75vw;
-	min-width: fit-content;
-	min-height: fit-content;
-	height: 675px;
+	min-height: 90vh;
 	border-radius: 25px;
 	background-color: var(--secondary);
 	color: var(--background);

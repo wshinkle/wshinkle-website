@@ -77,7 +77,7 @@ export class CommandArea {
                 return // Stop typing if the section has changed
             }
             newCommand.find('.command').append(c) // Ensure you're appending to the correct child element
-            await sleep(50) // character delay
+            await sleep(25) // character delay
         }
 
         await sleep(300) // wait before printing result

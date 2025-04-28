@@ -41,14 +41,12 @@ $(async function () {
 
     //when the hash changes, update the current section
     window.addEventListener('hashchange', async () => {
-        const hash = window.location.hash.substring(1)
-        CURRENT_SECTION = hash || 'landing'
-        await AreaObjects[hash || 'landing'].display()
+        CURRENT_SECTION = window.location.hash.substring(1) || 'landing'
+        await AreaObjects[CURRENT_SECTION].display()
     })
 
     // Get the current href hash
-    const hash = window.location.hash.substring(1)
-    CURRENT_SECTION = hash || 'landing'
-    await AreaObjects[hash || 'landing'].display()
+    CURRENT_SECTION = window.location.hash.substring(1) || 'landing'
+    await AreaObjects[CURRENT_SECTION].display()
     await loadLanding()
 })
