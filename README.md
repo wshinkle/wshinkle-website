@@ -1,1 +1,3 @@
-#Portfolio Webiste for Wyatt Shinkle (wyattshink@gmail.com)
+# Portfolio Webiste for Wyatt Shinkle (wyattshink@gmail.com)
+
+## Jquery/Typescript
