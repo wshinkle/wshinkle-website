@@ -4,10 +4,9 @@ FROM node:18 AS build
 # Set working directory
 WORKDIR /home/node/app
 
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Copy the files over
+COPY . ./
 
-# Clone repo and install dependencies
-RUN git clone https://github.com/wshinkle/wshinkle-website.git .
 RUN npm install
 
 # Build the application
