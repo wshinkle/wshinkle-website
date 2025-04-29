@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: Build with Webpack
 
 on:
   push:
@@ -10,24 +10,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 18.x
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18.x
 
-    - name: Install Dependencies and Build
+    - name: Install deps and build
       run: |
         npm install
         npm run build
 
-    - name: Deploy to GitHub Pages
+    - name: Push to gh-pages branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
