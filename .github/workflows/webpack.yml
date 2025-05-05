@@ -32,18 +32,8 @@ jobs:
                   git reset --hard
                   git clean -fdx -e /dist
 
-                  # Backup CNAME if it exists
-                  if git show origin/gh-pages:CNAME > CNAME; then
-                    echo "CNAME file backed up."
-                  fi
-
-                  cp -r dist/* .
-
-                  # Restore CNAME if it was backed up
-                  if [ -f CNAME ]; then
-                    echo "Restoring CNAME file."
-                    mv CNAME ./dist/
-                  fi
+                  mv dist/* .
+                  git restore --source=main ./CNAME
 
                   git add .
                   git commit -m "Deploy dist directory on $(date +'%Y-%m-%d %H:%M:%S')"
