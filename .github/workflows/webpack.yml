@@ -1,50 +1,50 @@
 name: Build with Webpack
 
 on:
-  pull_request:
-    branches: [ "main" ]
+    pull_request:
+        branches: ['main']
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18.x
+            - name: Use Node.js 18.x
+              uses: actions/setup-node@v4
+              with:
+                  node-version: latest
 
-    - name: Install deps and build
-      run: |
-        npm install
-        npm run build
+            - name: Install deps and build
+              run: |
+                  npm install
+                  npm run build
 
-    - name: Push to gh-pages branch
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git fetch origin gh-pages || true
-        git checkout --orphan gh-pages
-        git reset --hard
-        git clean -fdx -e /dist
+            - name: Push to gh-pages branch
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  git config --global user.name "github-actions"
+                  git config --global user.email "github-actions@github.com"
+                  git fetch origin gh-pages || true
+                  git checkout --orphan gh-pages
+                  git reset --hard
+                  git clean -fdx -e /dist
 
-        # Backup CNAME if it exists
-        if git show origin/gh-pages:CNAME > CNAME; then
-          echo "CNAME file backed up."
-        fi
+                  # Backup CNAME if it exists
+                  if git show origin/gh-pages:CNAME > CNAME; then
+                    echo "CNAME file backed up."
+                  fi
 
-        cp -r dist/* .
-        
-        # Restore CNAME if it was backed up
-        if [ -f CNAME ]; then
-          echo "Restoring CNAME file."
-          mv CNAME ./dist/
-        fi
+                  cp -r dist/* .
 
-        git add .
-        git commit -m "Deploy dist directory on $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force origin gh-pages
+                  # Restore CNAME if it was backed up
+                  if [ -f CNAME ]; then
+                    echo "Restoring CNAME file."
+                    mv CNAME ./dist/
+                  fi
+
+                  git add .
+                  git commit -m "Deploy dist directory on $(date +'%Y-%m-%d %H:%M:%S')"
+                  git push --force origin gh-pages

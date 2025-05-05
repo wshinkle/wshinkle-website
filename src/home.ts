@@ -1,6 +1,7 @@
 import * as $ from 'jquery'
 import { CommandArea } from './command-area'
 import { sections } from './sections'
+import { sleep } from './utils'
 
 export var CURRENT_SECTION = 'landing'
 
@@ -47,6 +48,38 @@ $(async function () {
 
     // Get the current href hash
     CURRENT_SECTION = window.location.hash.substring(1) || 'landing'
+    alternateTitle()
     await AreaObjects[CURRENT_SECTION].display()
     await loadLanding()
 })
+
+async function alternateTitle() {
+    const titles = [
+        './software-engineer',
+        './full-stack-developer',
+        './web-developer',
+        './computer-scientist',
+        './tech-enthusiast',
+        './problem-solver',
+    ]
+
+    const titleRef = $('#title-flavor')
+
+    let currentIndex = 1
+    while (true) {
+        const currentTitle = titleRef.text()
+        const nextTitle = titles[currentIndex % titles.length]
+
+        for (let i = 0; i < currentTitle.length; i++) {
+            titleRef.text(currentTitle.slice(0, currentTitle.length - i))
+            await sleep(50)
+        }
+        for (let i = 0; i < nextTitle.length; i++) {
+            titleRef.text(nextTitle.slice(0, i + 1))
+            await sleep(50)
+        }
+
+        currentIndex++
+        await sleep(3000) // Pause before the next transition
+    }
+}
