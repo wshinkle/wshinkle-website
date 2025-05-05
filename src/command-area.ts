@@ -3,8 +3,7 @@ import * as $ from 'jquery'
 import { sleep } from './utils'
 import { CURRENT_SECTION } from './home'
 
-const PROMPT = 'user@mothership$'
-
+const PROMPT = 'wyatt@shinkle$'
 export class CommandArea {
     private _section: Section
     private _loading: boolean = false
@@ -13,6 +12,10 @@ export class CommandArea {
         this._section = section
     }
 
+    /**
+     * @abstract Displays the command area for the current section.
+     * @returns
+     */
     async display() {
         if (this._loading) {
             return // Prevent re-entry if already loading
@@ -22,18 +25,8 @@ export class CommandArea {
 
         if (
             this._section.name !== 'landing' &&
-            !$('div.command-area').hasClass('command-area-grow')
+            !$('div.command-area').hasClass('command-area-grow') //todo: remove this check and add it to state
         ) {
-            $('.title-section').animate(
-                {
-                    height: 'toggle', // Simulates slideUp
-                    opacity: 0, // Simulates fadeOut
-                },
-                300, // Duration of the animation in milliseconds
-                function () {
-                    $(this).remove() // Remove the element after the animation completes
-                }
-            )
             $('div.command-area').addClass('command-area-grow')
         }
 
