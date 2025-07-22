@@ -1,7 +1,7 @@
-import { Command, Section } from './interfaces/command'
+import { Command, Section } from '../interfaces/command'
 import * as $ from 'jquery'
-import { sleep } from './utils'
-import { CURRENT_SECTION } from './home'
+import { sleep } from '../utils'
+import { CURRENT_SECTION } from '../home'
 
 const PROMPT = 'wyatt@shinkle$'
 export class CommandArea {
@@ -33,7 +33,6 @@ export class CommandArea {
         $('.navbar-item').removeClass('active')
         $(`#${this._section.name}`).toggleClass('active')
 
-        // await clearCMD()
         $('.command-area').empty()
 
         await this.loadSection()
@@ -80,11 +79,11 @@ export class CommandArea {
             if (CURRENT_SECTION !== this._section.name) {
                 return // Stop typing if the section has changed
             }
-            const newLine = `<${command.pre ? 'pre' : 'p'} class="command-result"></${command.pre ? 'pre' : 'p'}>`
-
+            const newLine = `<${command.pre ? 'pre' : 'p'} class="command-result"></${command.pre ? 'pre' : 'p'}>${command.pre ? '' : '<br/>'}`
             $('.command-section').last().append(newLine)
 
             var newChild = $('.command-result').last().append(command.result[i])
+
             await sleep(50) // wait before printing result
         }
     }

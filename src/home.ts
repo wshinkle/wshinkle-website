@@ -1,5 +1,5 @@
 import * as $ from 'jquery'
-import { CommandArea } from './command-area'
+import { CommandArea } from './components/command-area'
 import { sections } from './sections'
 import { sleep } from './utils'
 

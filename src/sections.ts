@@ -20,17 +20,29 @@ export const sections: Section[] = [
                 pre: true,
                 command: './initialize-developer',
                 result: [
-                    ' _____                          _____ ',
-                    '( ___ )     version 2.9.13     ( ___ )',
-                    ' |   |~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ',
-                    ' |   |  _       __ __  __ _____ |   | ',
-                    ' |   | | |     / // / / // ___/ |   | ',
-                    ' |   | | | /| / // /_/ / \\__ \\  |   | ',
-                    ' |   | | |/ |/ // __  / ___/ /  |   | ',
-                    ' |   | |__/|__//_/ /_/ /____/   |   | ',
-                    ' |   |                          |   | ',
-                    ' |___|~~~~~~~~~~~~~~~~~~~~~~~~~~|___| ',
-                    '(_____)    wyattshinkle.com    (_____)',
+                    '                                                                           ',
+                    '                                                            @@@+         @##   %@@@                 ',
+                    '                                                      @@@                @#######    @@@            ',
+                    '                                    @@@@#####@@   @@@                     @#############@           ',
+                    '                                @@#############@@                         @############@@           ',
+                    '                            @@%##@@@@@@@@@##@@               @@@@@#        @##########@             ',
+                    '                         @@@@@            @                @ @@@@@ @       @@########@              ',
+                    '                                       @@                 @ @   ..@ @       @#######@               ',
+                    '                                     @+ @                # @.     @ @       #@####@                 ',
+                    '                                    @    @                @ @#...@ @         @##@@                  ',
+                    '                                    @%   .=    *@@#@       @@    @@           @@                    ',
+                    '                            +++---...@    @@@##@@                           @@                      ',
+                    '                       ++++---.......@@@#@@@                             @@                         ',
+                    '                    ++++---.....@@##@@@    @                          @@                            ',
+                    '                 +++--------.@#@@%....-@  ::@                     @@                                ',
+                    '            ++=---++++--:...--......-++@::::@               @@@@                                    ',
+                    '   %++++++++++ ++++-..---+-:....--++    @@@@@@@@@@@@@@@@                                            ',
+                    '           +++----+++++-:----++++               @#####@                                              ',
+                    '       ++--+++   #++--+++++++                 @@#####@                                               ',
+                    '   ++++       ++++++++                      @@#####@                                                ',
+                    '           *+++                         @@#####@@                                                    ',
+                    '         +                          @@@##@@@@                                                        ',
+                    '                                 @@@                                                                ',
                 ],
             },
         ],
@@ -40,7 +52,7 @@ export const sections: Section[] = [
         commands: [
             {
                 pre: true,
-                command: './about',
+                command: 'cd ~/about',
                 result: [
                     '          ____   ____  _    _ _______ ',
                     '    /\\   |  _ \\ / __ \\| |  | |__   __|',
@@ -52,7 +64,7 @@ export const sections: Section[] = [
             },
             {
                 pre: false,
-                command: './whos-wyatt',
+                command: './auto-biography',
                 result: [
                     `I\'m Wyatt! I am a software engineer, passionate about solving problems and writing clean, concise solutions.
                      By leveraging wide range of skills that many consider me to proficient in, I am able to fix problems efficiently.
@@ -77,7 +89,7 @@ export const sections: Section[] = [
         commands: [
             {
                 pre: true,
-                command: './skills',
+                command: 'cd ~/skills',
                 result: [
                     '  _____ _  _______ _      _       _____ ',
                     ' / ____| |/ /_   _| |    | |     / ____|',
@@ -91,7 +103,7 @@ export const sections: Section[] = [
                 pre: false,
                 command: './languages --list --type modern',
                 result: [
-                    '> <strong>SQL:</strong> Proficient at writing efficient queries, working in both SQLserver and DB2 based systems. Understand how to analyze data, and pull useful conclusions from it. Skilled at optimizing queries via indexing.',
+                    '> <strong>SQL:</strong> Proficient at writing efficient queries, working in both SQL Server and DB2 based systems. Understand how to analyze data, and pull useful conclusions from it. Skilled at optimizing queries via indexing.',
                     '> <strong>C#/.NET:</strong> Well versed in modern backend development, writing secure RESTful APIs follwing the latest OpenAPI specifications. Have firm understanding of relationships between Data/Service layers, utilizing Entity-Framework and more simplistic ORMs',
                     '> <strong>Typescript:</strong> Proficient in writing Typescript for frontend applications.',
                     '> <strong>Python:</strong> Proficient in writing Python code, often for small scripts',
@@ -122,7 +134,7 @@ export const sections: Section[] = [
         commands: [
             {
                 pre: true,
-                command: './projects',
+                command: 'cd ~/projects',
                 result: [
                     ' _____  _____   ____       _ ______ _____ _______ _____ ',
                     '|  __ \\|  __ \\ / __ \\     | |  ____/ ____|__   __/ ____|',
@@ -204,7 +216,7 @@ export const sections: Section[] = [
             },
             {
                 pre: false,
-                command: './cve-2024-2982-ctf',
+                command: './cve-ctf',
                 result: [
                     '> <strong>CVE-2023-2982 Capture The Flag</strong>',
                     '> Tasked with creating a Capture The Flag challenge that would help demonstrate the importance of security and the process of finding and exploiting vulnerabilities in web applications',
@@ -216,37 +228,21 @@ export const sections: Section[] = [
             },
         ],
     },
-    {
-        name: 'contact',
-        commands: [
-            {
-                pre: true,
-                command: './contact',
-                result: [
-                    '  _____ ____  _   _ _______       _____ _______ ',
-                    ' / ____/ __ \\| \\ | |__   __|/\\   / ____|__   __|',
-                    '| |   | |  | |  \\| |  | |  /  \\ | |       | |   ',
-                    '| |   | |  | | . ` |  | | / /\\ \\| |       | |   ',
-                    '| |___| |__| | |\\  |  | |/ ____ \\ |____   | |   ',
-                    ' \\_____\\____/|_| \\_|  |_/_/    \\_\\_____|  |_|   ',
-                ],
-            },
-        ],
-    },
-    {
-        name: 'three',
-        commands: [
-            {
-                pre: true,
-                command: './3d',
-                result: [
-                    '__        _____ ____  ',
-                    '\\ \\      / /_ _|  _ \\ ',
-                    ' \\ \\ /\\ / / | || |_) |',
-                    '  \\ V  V /  | ||  __/ ',
-                    '   \\_/\\_/  |___|_|    ',
-                ],
-            },
-        ],
-    },
+    // {
+    //     name: 'contact',
+    //     commands: [
+    //         {
+    //             pre: true,
+    //             command: 'cd ~/contact',
+    //             result: [
+    //                 '  _____ ____  _   _ _______       _____ _______ ',
+    //                 ' / ____/ __ \\| \\ | |__   __|/\\   / ____|__   __|',
+    //                 '| |   | |  | |  \\| |  | |  /  \\ | |       | |   ',
+    //                 '| |   | |  | | . ` |  | | / /\\ \\| |       | |   ',
+    //                 '| |___| |__| | |\\  |  | |/ ____ \\ |____   | |   ',
+    //                 ' \\_____\\____/|_| \\_|  |_/_/    \\_\\_____|  |_|   ',
+    //             ],
+    //         },
+    //     ],
+    // },
 ]

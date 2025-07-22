@@ -1,21 +1,9 @@
 :root {
     /* Light theme colors */
-    --background: #d8dbe2;   /* platinum */
-    --surface: #a9bcd0;      /* powder-blue */
-    --primary: #58a4b0;      /* moonstone */
-    --secondary: #373f51;    /* charcoal */
-    --tertiary: #1b1b1e;     /* eerie-black */
-}
-
-@media (prefers-color-scheme: dark) {
-    form {
-        /* Dark theme overrides */
-        --background: #1b1b1e;   /* eerie-black */
-        --surface: #373f51;      /* charcoal */
-        --primary: #58a4b0;      /* moonstone stays same */
-        --secondary: #a9bcd0;    /* lighter blue */
-        --tertiary: #d8dbe2;     /* platinum for contrast */
-    }
+    --background: #D8C1FF; 
+    --primary: #F9A602;      
+    --secondary: #120E1C;    
+    --tertiary: #1b1b1e;     
 }
 
 
@@ -73,6 +61,8 @@ h2:last-child {
 	border-radius: 12px;
 	background-color: var(--secondary);
 	color: var(--background);
+	font-size: 32px;
+
 }
 
 .command-area-grow {
@@ -94,7 +84,6 @@ h2:last-child {
 
 .command-result {
 	margin: 0px;
-	font-size: 32px;
 }
 
 .hidden {
@@ -106,7 +95,7 @@ h2:last-child {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-
+	gap: 10px;
 }
 
 .navbar-appear {
@@ -123,7 +112,7 @@ h2:last-child {
 	color: var(--secondary);
 	text-decoration: none;
 	font-size: 24px;
-	border-radius: 10px;
+	border-radius: 12px;
 }
 
 .navbar-item:hover {
